@@ -1,4 +1,4 @@
-# Pink-Floyd landing page
+# Pink-Floyd Landing Page
 
 Landing Page For Training Purposes Using Css3 Properties And HTML5 Semantic Elements. 
 
