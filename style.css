@@ -1,0 +1,252 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  --mainColor: #cc102d;
+}
+
+header {
+  background-color: white;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+  z-index: 999;
+}
+header .logo {
+  width: 150px;
+}
+header .logo img {
+  width: 100%;
+  border-radius: 10%;
+  box-shadow: -20px 0px 25px -15px var(--mainColor),
+    20px -20px 50px -20px purple;
+  transition: 0.8s;
+}
+header .logo img:hover {
+  width: 100%;
+  border-radius: 0;
+  box-shadow: -20px 0px 25px -15px var(--mainColor);
+}
+header a {
+  text-decoration: none;
+}
+
+header nav a {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: var(--mainColor);
+  padding-left: 30px;
+}
+header nav a:hover {
+  color: #e88514;
+}
+
+section {
+  padding: 100px 200px;
+}
+/* Start Main */
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/Pulse\ -\ 1.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@keyframes albums-btn {
+  from {
+    transform: rotate(80deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.main a.album-btn {
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  /* background: var(--mainColor); */
+  border: var(--mainColor) solid 1px;
+  border-radius: 0.25em;
+  /* border-bottom: none; */
+  padding: 1.5em 2.5em;
+  color: yellow;
+  display: inline-block;
+  transform: rotate(80deg);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% /0.3), 0 0 0.45em currentColor;
+  background: #3c353f;
+  box-shadow: inset -10px 10px 10px 0px var(--mainColor);
+
+  animation-name: albums-btn;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+}
+
+.main a.album-btn:hover {
+  animation: 0;
+  color: var(--mainColor);
+}
+/* End Main  */
+.title {
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+  color: purple;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% /0.9);
+  background-color: black;
+  padding: 1em;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  border: 2px solid #e88514;
+  border-radius: 5px;
+  transform: rotate(-10deg);
+  box-shadow: -4px 0px 10px 0px purple;
+}
+.cards h2.title span {
+  color: var(--mainColor);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card-img {
+  background: url("images/The Piper at the Gates of Dawn 1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0.9em;
+  width: 21.25em;
+  margin: 1em;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(204, 16, 45, 0.5);
+  padding: 3em;
+  box-shadow: inset -10px 10px 50px 0px #e88514;
+  transition: 0.7s ease;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 100%;
+}
+.card .icon {
+  color: #e88514;
+  font-size: 4em;
+  text-align: center;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card .info {
+  text-align: center;
+}
+.card .info h3 {
+  color: purple;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 2em;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  text-shadow: 0 0 1.125em hsl(0 0% 100% /0.9);
+}
+
+.card .info p {
+  font-weight: 600;
+  color: whitesmoke;
+}
+
+/*Start Album Section*/
+
+.albums {
+  background-image: linear-gradient(
+    to right,
+    var(--mainColor),
+    green,
+    purple,
+    black
+  );
+}
+.albums .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.album-card {
+  margin: 10px;
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: -5px 5px 15px #000;
+  border-radius: 5px;
+  width: 20em;
+  overflow: hidden;
+  min-height: 14em;
+  transition: 0.7s ease;
+}
+.album-card .album-image img {
+  width: 100%;
+}
+.album-card:hover {
+  transform: scale(1.04);
+}
+.album-card:hover .album-image {
+  opacity: 0.9;
+}
+.album-info {
+  padding: 1em;
+}
+.album-release {
+  display: flex;
+  justify-content: space-between;
+}
+.album-release a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #e88514;
+}
+/*End Album Section*/
+
+/*Media Queries*/
+@media (max-width: 1023px) {
+  header {
+    padding: 10px 20px;
+  }
+  header nav a {
+    padding-left: 10px;
+  }
+  .title {
+    font-size: 1.5em;
+  }
+  section {
+    padding: 80px 20px;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 641px) {
+  body {
+    font-size: 12px;
+  }
+}
+@media (max-width: 300px) {
+  body {
+    font-size: 10px;
+  }
+}
